@@ -1,6 +1,6 @@
 // name of the die; d10, d20, etc
 die_name = 10;
-text_font = "Comic Sans:style=Bold";
+text_font = "DejaVu Sans:style=Bold";
 text_depth = 1;
 text_size = 4;
 
@@ -30,7 +30,7 @@ lip_wall = 0.20;
 lip_ratio =  0.875;
 
 // Height of the outer shell
-shell_height = 50;
+shell_height = 75;
 // Wall width of the outer shell
 shell_width = 1;
 // Tolerance of shell to inner
