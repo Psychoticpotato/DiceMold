@@ -1,9 +1,11 @@
 // name of the die; d10, d20, etc
 die_name = 10;
-text_font = "DejaVu Sans:style=Bold";
-text_depth = 1;
-text_size = 4;
 
+text_font = "DejaVu Sans:style=Bold";
+// Distance to extrude the text
+text_depth = 1;
+// Font height of the text
+text_size = 4;
 
 // Whether or not to generate the shell
 create_shell = true;
@@ -53,8 +55,7 @@ d8 =  [17.15,3,1];
 d6 =  [17.15,4,1];
 d4 =  [19.70,3,1];
 
-// TODO: Size of pedestal
-
+// Get the size info for the particular die name
 function size_info(die_name) = 
 die_name == 20 ? d20:
 die_name == 12 ? d12:
@@ -67,36 +68,27 @@ die_name ==  4 ? d4:
 
 size = size_info(die_name);
 
-
-// TODO: Outside part
-// Begin generating the inside bottom mold
 if (create_base) {
-    inside_bot();
+    base();
 }
 if (create_shell) {
     shell();
 }
-module inside_bot() {
-      
+module base() {
+
     difference() {
         linear_extrude(height=base_h+lip_height)
         profile(radius);
         lip();
-    } 
-    
-    
-    // Finally, apply the pedestal
+    }
+    // We now have cut out the lip from everything
     pedestal();
-    
     // Put some text on!
     make_text();
 }
 
 module lip() {
-//    rotate_extrude()
-//    translate([radius - lip_width,base_h,0])
-//
-//    polygon(points=[[0,0],[lip_width,0],[lip_width,lip_height]]);
+    // Add 0.1 for proper difference
     hgt = lip_height + 0.01;
     translate([0,0,base_h+hgt])
     rotate([0,180,180])
@@ -107,7 +99,6 @@ module lip() {
     twist=0)
     profile(radius-lip_wall);
 }
-
 
 module profile(rad) {
     // Width of the point (triangle)
