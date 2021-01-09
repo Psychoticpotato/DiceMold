@@ -45,7 +45,7 @@ circle_prec = 64;
 $fn=circle_prec;
 // Begin list of die parameters
 // - First = rough size of face      -Second = number of sides.     -third = scale on X (used on D10 and D100)
-d20 = [11.50,3,1];
+d20 = [12.20,3,1];
 d12 = [12.50,5,1];
 d100 =[13.20,3,0.8];
 d10 = [13.20,3,0.8];
