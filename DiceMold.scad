@@ -15,7 +15,7 @@ create_base = true;
 // Height of bottom mold
 base_h = 1.6;
 // Radius of the mold
-radius = 20;
+radius = 18;
 
 // Height of the pedestal
 ped_height = 4.5;
