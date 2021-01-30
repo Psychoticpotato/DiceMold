@@ -34,7 +34,7 @@ lip_ratio =  0.875;
 // Height of the outer shell
 shell_height = 50;
 // Wall width of the outer shell
-shell_width = 1;
+shell_width = 1.6;
 // Tolerance of shell to inner
 shell_off = 0.4;
 // Inner radius of the shell
